@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = storyboardclient
+omit = storyboardclient/tests/*,storyboardclient/openstack/*
+
+[report]
+ignore-errors = True

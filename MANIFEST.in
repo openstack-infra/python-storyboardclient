@@ -1,0 +1,8 @@
+include AUTHORS
+include ChangeLog
+exclude .gitignore
+exclude .gitreview
+exclude *.egg
+exclude *.egg-info
+
+global-exclude *.pyc
