@@ -9,5 +9,6 @@ oslo.config>=1.4.0
 oslo.i18n>=1.0.0
 oslo.serialization>=1.0.0
 oslo.utils>=1.0.0
+requests>=2.2.0,!=2.4.0
 six>=1.7.0
 stevedore>=1.1.0
