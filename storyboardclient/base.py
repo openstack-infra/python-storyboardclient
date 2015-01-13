@@ -104,9 +104,21 @@ class BaseManager(base.CrudManager):
         """
 
         kwargs = self._filter_kwargs(kwargs)
-        return self._post(
-            self.build_url(**kwargs),
-            kwargs)
+        return self._post(self.build_url(**kwargs), kwargs)
+
+    def update(self, **kwargs):
+        """Update a resource.
+
+        The default implementation is overridden so that the dictionary is
+        passed 'as is' without any wrapping. The id field is removed from the
+        request body.
+        """
+
+        kwargs = self._filter_kwargs(kwargs)
+        params = kwargs.copy()
+        params.pop('id')
+
+        return self._put(self.build_url(**kwargs), params)
 
 
 class BaseNestedManager(BaseManager):
