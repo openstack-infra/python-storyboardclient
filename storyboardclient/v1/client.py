@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from storyboardclient import base
+from storyboardclient.v1 import teams
 from storyboardclient.v1 import users
 
 
@@ -41,4 +42,5 @@ class Client(base.BaseClient):
         super(Client, self).__init__(api_url=api_url,
                                      access_token=access_token)
 
+        self.teams = teams.TeamsManager(self)
         self.users = users.UsersManager(self)
