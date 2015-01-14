@@ -14,6 +14,8 @@
 # limitations under the License.
 
 from storyboardclient import base
+from storyboardclient.v1 import project_groups
+from storyboardclient.v1 import projects
 from storyboardclient.v1 import teams
 from storyboardclient.v1 import users
 
@@ -43,4 +45,6 @@ class Client(base.BaseClient):
                                      access_token=access_token)
 
         self.teams = teams.TeamsManager(self)
+        self.projects = projects.ProjectsManager(self)
+        self.project_groups = project_groups.ProjectGroupsManager(self)
         self.users = users.UsersManager(self)
