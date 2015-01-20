@@ -16,6 +16,8 @@
 from storyboardclient import base
 from storyboardclient.v1 import project_groups
 from storyboardclient.v1 import projects
+from storyboardclient.v1 import stories
+from storyboardclient.v1 import tasks
 from storyboardclient.v1 import teams
 from storyboardclient.v1 import users
 
@@ -44,7 +46,9 @@ class Client(base.BaseClient):
         super(Client, self).__init__(api_url=api_url,
                                      access_token=access_token)
 
+        self.tasks = tasks.TasksManager(self)
         self.teams = teams.TeamsManager(self)
         self.projects = projects.ProjectsManager(self)
         self.project_groups = project_groups.ProjectGroupsManager(self)
+        self.stories = stories.StoriesManager(self)
         self.users = users.UsersManager(self)
