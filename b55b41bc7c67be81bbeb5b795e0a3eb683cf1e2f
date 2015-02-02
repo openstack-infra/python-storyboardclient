@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: yolanda.robla <info@ysoft.biz>
+Code-Review+2: Michael Krotscheck <krotscheck@gmail.com>
+Workflow+1: Michael Krotscheck <krotscheck@gmail.com>
+Code-Review+1: Petr Cech <petr.celestian@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 02 Feb 2015 15:29:03 +0000
+Reviewed-on: https://review.openstack.org/150067
+Project: openstack-infra/python-storyboardclient
+Branch: refs/heads/master
