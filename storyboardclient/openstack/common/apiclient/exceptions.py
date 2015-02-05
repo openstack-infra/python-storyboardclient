@@ -458,12 +458,10 @@ def from_response(response, method, url):
             pass
         else:
             if isinstance(body, dict):
-                error = body.get(list(body)[0])
-                if isinstance(error, dict):
-                    kwargs["message"] = (error.get("message") or
-                                         error.get("faultstring"))
-                    kwargs["details"] = (error.get("details") or
-                                         six.text_type(body))
+                kwargs["message"] = (body.get("message") or
+                                     body.get("faultstring"))
+                kwargs["details"] = (body.get("details") or
+                                     six.text_type(body))
     elif content_type.startswith("text/"):
         kwargs["details"] = response.text
 
