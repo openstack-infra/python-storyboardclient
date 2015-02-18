@@ -453,10 +453,11 @@ class Resource(object):
         :param info: dictionary representing resource attributes
         :param loaded: prevent lazy-loading if set to True
         """
+        super(Resource, self).__init__()
         self.manager = manager
         self._info = info
-        self._add_details(info)
         self._loaded = loaded
+        self._add_details(info)
 
     def __repr__(self):
         reprkeys = sorted(k
