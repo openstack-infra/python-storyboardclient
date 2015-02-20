@@ -73,3 +73,13 @@ class StoriesTestCase(test_base.TestCase):
             "/stories/test_story_id/tasks",
             {"title": "test_task",
              "story_id": "test_story_id"})
+
+    @mock.patch("storyboardclient.v1.tags.TagsNestedManager._put")
+    def test_stories_update_tags(self, mock_private_put):
+        test_story = stories.Story(mock.MagicMock(),
+                                   info={"id": "test_story_id"})
+        test_story.tags_manager.update(["first_test_tag", "second_test_tag"])
+
+        mock_private_put.assert_called_once_with(
+            "/stories/test_story_id/tags",
+            ["first_test_tag", "second_test_tag"])

@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from storyboardclient import base
+from storyboardclient.v1 import tags as tags_api
 from storyboardclient.v1 import tasks
 
 
@@ -23,8 +24,10 @@ class Story(base.BaseObject):
     is_bug = None
     creator_id = None
     status = None
+    tags = None
 
     tasks = tasks.TasksNestedManager
+    tags_manager = tags_api.TagsNestedManager
 
 
 class StoriesManager(base.BaseManager):
