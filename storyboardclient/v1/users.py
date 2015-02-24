@@ -15,6 +15,7 @@
 
 from storyboardclient import base
 from storyboardclient.v1 import user_preferences
+from storyboardclient.v1 import user_tokens
 
 
 class User(base.BaseObject):
@@ -26,6 +27,7 @@ class User(base.BaseObject):
     enable_login = None
 
     user_preferences = user_preferences.UserPreferencesManager
+    user_tokens = user_tokens.UserTokensNestedManager
 
 
 class UsersManager(base.BaseManager):
