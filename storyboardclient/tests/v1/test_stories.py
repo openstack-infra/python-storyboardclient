@@ -73,3 +73,47 @@ class StoriesTestCase(test_base.TestCase):
             "/stories/test_story_id/tasks",
             {"title": "test_task",
              "story_id": "test_story_id"})
+
+    @mock.patch(
+        "storyboardclient.v1.timeline.TimeLineEventsNestedManager._list"
+    )
+    def test_stories_list_events(self, mock_private_list):
+        test_story = stories.Story(mock.MagicMock(),
+                                   info={"id": "test_story_id"})
+
+        test_story.events.list()
+
+        mock_private_list.assert_called_once_with(
+            "/stories/test_story_id/events", None)
+
+    @mock.patch("storyboardclient.v1.timeline.CommentsNestedManager._list")
+    def test_stories_list_comments(self, mock_private_list):
+        test_story = stories.Story(mock.MagicMock(),
+                                   info={"id": "test_story_id"})
+
+        test_story.comments.list()
+
+        mock_private_list.assert_called_once_with(
+            "/stories/test_story_id/comments", None)
+
+    @mock.patch("storyboardclient.v1.timeline.CommentsNestedManager._post")
+    def test_stories_create_comment(self, mock_private_post):
+        test_story = stories.Story(mock.MagicMock(),
+                                   info={"id": "test_story_id"})
+
+        test_story.comments.create(content="test_comment")
+
+        mock_private_post.assert_called_once_with(
+            "/stories/test_story_id/comments",
+            {"content": "test_comment"})
+
+    @mock.patch("storyboardclient.v1.timeline.CommentsNestedManager._put")
+    def test_stories_update_comment(self, mock_private_put):
+        test_story = stories.Story(mock.MagicMock(),
+                                   info={"id": "test_story_id"})
+        test_story.comments.update(id="comment_id",
+                                   content="updated_test_comment")
+
+        mock_private_put.assert_called_once_with(
+            "/stories/test_story_id/comments/comment_id",
+            {"content": "updated_test_comment"})

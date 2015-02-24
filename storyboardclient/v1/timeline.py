@@ -14,22 +14,28 @@
 # limitations under the License.
 
 from storyboardclient import base
-from storyboardclient.v1 import tasks
-from storyboardclient.v1 import timeline
 
 
-class Story(base.BaseObject):
-    title = None
-    description = None
-    is_bug = None
-    creator_id = None
-    status = None
-
-    tasks = tasks.TasksNestedManager
-    comments = timeline.CommentsNestedManager
-    events = timeline.TimeLineEventsNestedManager
+class Comment(base.BaseObject):
+    content = None
+    is_active = None
 
 
-class StoriesManager(base.BaseManager):
-    url_key = "stories"
-    resource_class = Story
+class TimeLineEvent(base.BaseObject):
+    event_type = None
+    event_info = None
+    story_id = None
+    author_id = None
+    comment_id = None
+
+
+class CommentsNestedManager(base.BaseNestedManager):
+    parent_url_key = "stories"
+    url_key = "comments"
+    resource_class = Comment
+
+
+class TimeLineEventsNestedManager(base.BaseNestedManager):
+    parent_url_key = "stories"
+    url_key = "events"
+    resource_class = TimeLineEvent
