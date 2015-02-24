@@ -15,6 +15,7 @@
 
 from storyboardclient import base
 from storyboardclient.v1 import tasks
+from storyboardclient.v1 import timeline
 
 
 class Story(base.BaseObject):
@@ -25,6 +26,8 @@ class Story(base.BaseObject):
     status = None
 
     tasks = tasks.TasksNestedManager
+    comments = timeline.CommentsNestedManager
+    events = timeline.TimeLineEventsNestedManager
 
 
 class StoriesManager(base.BaseManager):
