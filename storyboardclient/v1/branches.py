@@ -16,13 +16,14 @@
 from storyboardclient import base
 
 
-class Project(base.BaseObject):
+class Branch(base.BaseObject):
     name = None
-    description = None
-    is_active = None
-    autocreate_branches = None
+    project_id = None
+    expired = None
+    expiration_date = None
+    autocreated = None
 
 
-class ProjectsManager(base.BaseManager):
-    url_key = "projects"
-    resource_class = Project
+class BranchesManager(base.BaseManager):
+    url_key = "branches"
+    resource_class = Branch

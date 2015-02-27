@@ -24,6 +24,7 @@ class Task(base.BaseObject):
     story_id = None
     project_id = None
     assignee_id = None
+    branch_id = None
     priority = None
 
 

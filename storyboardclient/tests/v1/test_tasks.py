@@ -38,13 +38,15 @@ class TasksTestCase(test_base.TestCase):
         tasks.TasksManager(mock.MagicMock()).create(
             title="test_task",
             story_id="test_story_id",
-            project_id="test_project_id")
+            project_id="test_project_id",
+            branch_id="test_branch_id")
 
         mock_private_post.assert_called_once_with(
             "/tasks",
             {"title": "test_task",
              "story_id": "test_story_id",
-             "project_id": "test_project_id"})
+             "project_id": "test_project_id",
+             "branch_id": "test_branch_id"})
 
     @mock.patch("storyboardclient.v1.tasks.TasksManager._put")
     def test_tasks_update(self, mock_private_put):

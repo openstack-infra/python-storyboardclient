@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from storyboardclient import base
+from storyboardclient.v1 import branches
 from storyboardclient.v1 import project_groups
 from storyboardclient.v1 import projects
 from storyboardclient.v1 import stories
@@ -47,6 +48,7 @@ class Client(base.BaseClient):
         super(Client, self).__init__(api_url=api_url,
                                      access_token=access_token)
 
+        self.branches = branches.BranchesManager(self)
         self.tasks = tasks.TasksManager(self)
         self.teams = teams.TeamsManager(self)
         self.projects = projects.ProjectsManager(self)
