@@ -14,25 +14,24 @@
 # limitations under the License.
 
 from storyboardclient import base
-from storyboardclient.v1 import tags as tags_api
-from storyboardclient.v1 import tasks
-from storyboardclient.v1 import timeline
 
 
-class Story(base.BaseObject):
-    title = None
-    description = None
-    is_bug = None
-    creator_id = None
-    status = None
-    tags = None
-
-    tasks = tasks.TasksNestedManager
-    comments = timeline.CommentsNestedManager
-    events = timeline.TimeLineEventsNestedManager
-    tags_manager = tags_api.TagsNestedManager
+class Tag(base.BaseObject):
+    name = None
 
 
-class StoriesManager(base.BaseManager):
-    url_key = "stories"
-    resource_class = Story
+class TagsManager(base.BaseManager):
+    url_key = "tags"
+    resource_class = Tag
+
+
+class TagsNestedManager(base.BaseNestedManager):
+    parent_url_key = "stories"
+    url_key = "tags"
+    resource_class = Tag
+
+    def update(self, tags):
+        return self._put(self.build_url(), tags)
+
+    def delete(self, tags):
+        return self.client.delete(self.build_url(), json=tags)

@@ -19,6 +19,7 @@ from storyboardclient.v1 import project_groups
 from storyboardclient.v1 import projects
 from storyboardclient.v1 import stories
 from storyboardclient.v1 import subscriptions
+from storyboardclient.v1 import tags
 from storyboardclient.v1 import tasks
 from storyboardclient.v1 import teams
 from storyboardclient.v1 import users
@@ -56,3 +57,4 @@ class Client(base.BaseClient):
         self.stories = stories.StoriesManager(self)
         self.users = users.UsersManager(self)
         self.subscriptions = subscriptions.SubscriptionsManager(self)
+        self.tags = tags.TagsManager(self)
