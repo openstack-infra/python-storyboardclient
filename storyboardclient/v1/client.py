@@ -15,6 +15,7 @@
 
 from storyboardclient import base
 from storyboardclient.v1 import branches
+from storyboardclient.v1 import milestones
 from storyboardclient.v1 import project_groups
 from storyboardclient.v1 import projects
 from storyboardclient.v1 import stories
@@ -58,3 +59,4 @@ class Client(base.BaseClient):
         self.users = users.UsersManager(self)
         self.subscriptions = subscriptions.SubscriptionsManager(self)
         self.tags = tags.TagsManager(self)
+        self.milestones = milestones.MilestonesManager(self)

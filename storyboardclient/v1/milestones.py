@@ -16,29 +16,13 @@
 from storyboardclient import base
 
 
-class Task(base.BaseObject):
-    title = None
-    status = None
-    is_active = None
-    creator_id = None
-    story_id = None
-    project_id = None
-    assignee_id = None
+class Milestone(base.BaseObject):
+    name = None
     branch_id = None
-    milestone_id = None
-    priority = None
+    expired = None
+    expiration_date = None
 
 
-class TasksManager(base.BaseManager):
-    url_key = "tasks"
-    resource_class = Task
-
-
-class TasksNestedManager(base.BaseNestedManager):
-    parent_url_key = "stories"
-    url_key = "tasks"
-    resource_class = Task
-
-    def create(self, **kwargs):
-        kwargs["story_id"] = self.parent_id
-        return super(TasksNestedManager, self).create(**kwargs)
+class MilestonesManager(base.BaseManager):
+    url_key = "milestones"
+    resource_class = Milestone
