@@ -19,6 +19,7 @@ from storyboardclient.v1 import milestones
 from storyboardclient.v1 import project_groups
 from storyboardclient.v1 import projects
 from storyboardclient.v1 import stories
+from storyboardclient.v1 import subscription_events
 from storyboardclient.v1 import subscriptions
 from storyboardclient.v1 import tags
 from storyboardclient.v1 import tasks
@@ -57,6 +58,8 @@ class Client(base.BaseClient):
         self.project_groups = project_groups.ProjectGroupsManager(self)
         self.stories = stories.StoriesManager(self)
         self.users = users.UsersManager(self)
+        self.subscription_events = \
+            subscription_events.SubscriptionEventsManager(self)
         self.subscriptions = subscriptions.SubscriptionsManager(self)
         self.tags = tags.TagsManager(self)
         self.milestones = milestones.MilestonesManager(self)
