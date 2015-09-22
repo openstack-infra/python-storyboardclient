@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Zara <zara.zaimeche@codethink.co.uk>
+Workflow+1: Zara <zara.zaimeche@codethink.co.uk>
+Submitted-by: Jenkins
+Submitted-at: Tue, 22 Sep 2015 09:01:44 +0000
+Reviewed-on: https://review.openstack.org/226064
+Project: openstack-infra/python-storyboardclient
+Branch: refs/heads/master
