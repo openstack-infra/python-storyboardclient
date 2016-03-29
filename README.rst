@@ -13,3 +13,9 @@ Features
 --------
 
 * TODO
+
+Notes
+-----
+
+There is no command to run this; rather it can be imported into other
+scripts.
