@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from storyboardclient import base
+from storyboardclient.v1 import boards
 from storyboardclient.v1 import branches
 from storyboardclient.v1 import milestones
 from storyboardclient.v1 import project_groups
@@ -65,3 +66,4 @@ class Client(base.BaseClient):
         self.tags = tags.TagsManager(self)
         self.milestones = milestones.MilestonesManager(self)
         self.worklists = worklists.WorklistsManager(self)
+        self.boards = boards.BoardsManager(self)
