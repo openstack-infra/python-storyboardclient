@@ -27,6 +27,7 @@ class Task(base.BaseObject):
     branch_id = None
     milestone_id = None
     priority = None
+    link = None
 
 
 class TasksManager(base.BaseManager):
