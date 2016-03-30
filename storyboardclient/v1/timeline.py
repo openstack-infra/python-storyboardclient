@@ -19,6 +19,7 @@ from storyboardclient import base
 class Comment(base.BaseObject):
     content = None
     is_active = None
+    in_reply_to = None
 
 
 class TimeLineEvent(base.BaseObject):
