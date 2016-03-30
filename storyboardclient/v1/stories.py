@@ -26,6 +26,7 @@ class Story(base.BaseObject):
     creator_id = None
     status = None
     tags = None
+    story_type_id = None
 
     tasks = tasks.TasksNestedManager
     comments = timeline.CommentsNestedManager
