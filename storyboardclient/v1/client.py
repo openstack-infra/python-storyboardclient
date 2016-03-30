@@ -25,6 +25,7 @@ from storyboardclient.v1 import tags
 from storyboardclient.v1 import tasks
 from storyboardclient.v1 import teams
 from storyboardclient.v1 import users
+from storyboardclient.v1 import worklists
 
 
 class Client(base.BaseClient):
@@ -63,3 +64,4 @@ class Client(base.BaseClient):
         self.subscriptions = subscriptions.SubscriptionsManager(self)
         self.tags = tags.TagsManager(self)
         self.milestones = milestones.MilestonesManager(self)
+        self.worklists = worklists.WorklistsManager(self)
