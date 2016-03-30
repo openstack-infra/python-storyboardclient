@@ -21,6 +21,8 @@ class Project(base.BaseObject):
     description = None
     is_active = None
     autocreate_branches = None
+    repo_url = None
+    team_id = None
 
 
 class ProjectsManager(base.BaseManager):
