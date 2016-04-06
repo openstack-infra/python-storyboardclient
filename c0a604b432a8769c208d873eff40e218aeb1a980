@@ -1,0 +1,11 @@
+Code-Review+2: Elizabeth K. Joseph <lyz@princessleia.com>
+Code-Review+1: Alejandro Siller Rivas <alejandro.rivas@ericsson.com>
+Code-Review+1: Ricardo Carrillo Cruz <ricardo.carrillo.cruz@gmail.com>
+Code-Review+2: Zara <zara.zaimeche@codethink.co.uk>
+Workflow+1: Zara <zara.zaimeche@codethink.co.uk>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 06 Apr 2016 09:29:45 +0000
+Reviewed-on: https://review.openstack.org/298910
+Project: openstack-infra/python-storyboardclient
+Branch: refs/heads/master
