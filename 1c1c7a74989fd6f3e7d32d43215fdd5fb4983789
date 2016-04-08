@@ -1,0 +1,10 @@
+Code-Review+1: Anita Kuno <anteaya@anteaya.info>
+Code-Review+2: Zara <zara.zaimeche@codethink.co.uk>
+Workflow+1: Zara <zara.zaimeche@codethink.co.uk>
+Code-Review+1: Mike_G <mg6596@att.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 08 Apr 2016 17:20:35 +0000
+Reviewed-on: https://review.openstack.org/303535
+Project: openstack-infra/python-storyboardclient
+Branch: refs/heads/master
