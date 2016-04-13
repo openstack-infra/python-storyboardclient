@@ -71,7 +71,7 @@ class BaseHTTPClient(client.HTTPClient):
 
 class BaseManager(base.CrudManager):
 
-    def build_url(self, base_url=None, **kwargs):
+    def build_url(self, base_url=None, method=None, **kwargs):
         # Overriding to use "url_key" instead of the "collection_key".
         # "key_id" is replaced with just "id" when querying a specific object.
         url = base_url if base_url is not None else ''
@@ -81,6 +81,16 @@ class BaseManager(base.CrudManager):
         entity_id = kwargs.get('id')
         if entity_id is not None:
             url += '/%s' % entity_id
+
+        elif method == 'get':
+            first = True
+            for key, value in kwargs.iteritems():
+                if first:
+                    url += '?'
+                    first = False
+                else:
+                    url += '&'
+                url += '%s=%s' % (key, value)
 
         return url
 
@@ -95,6 +105,27 @@ class BaseManager(base.CrudManager):
 
         query_kwargs = {"id": id}
         return self._get(self.build_url(**query_kwargs), self.key)
+
+    def get_all(self, **kwargs):
+        """Get resources by properties other than ID."""
+        kwargs = self._filter_kwargs(kwargs)
+        return self._get_all(self.build_url(method='get', **kwargs), self.key)
+
+    def _get_all(self, url, response_key=None):
+        """Get collection of stuff.
+
+        Put here because we can't modify base.py in the OpenStack
+        APIclient (probably)
+
+        :param url: a partial URL, e.g., '/servers'
+        :param response_key: the key to be looked up in response dictionary,
+            e.g., 'server'. If response_key is None - all response body
+            will be used.
+        """
+
+        body = self.client.get(url).json()
+        data = body[response_key] if response_key is not None else body
+        return [self.resource_class(self, item, loaded=True) for item in data]
 
     def create(self, **kwargs):
         """Create a resource.
