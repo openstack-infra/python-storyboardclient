@@ -31,7 +31,7 @@ class BaseClient(client.BaseClient):
             api_url = DEFAULT_API_URL
 
         self.auth_plugin = oauth.OAuthPlugin(api_url, access_token)
-        self.http_client = BaseHTTPClient(auth_plugin=self.auth_plugin)
+        self.http_client = BaseHTTPClient(auth_plugin=self.auth_plugin, verify=False)
 
 
 class BaseHTTPClient(client.HTTPClient):
