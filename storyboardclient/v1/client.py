@@ -27,6 +27,7 @@ from storyboardclient.v1 import tasks
 from storyboardclient.v1 import teams
 from storyboardclient.v1 import users
 from storyboardclient.v1 import worklists
+from storyboardclient.v1 import due_dates
 
 
 class Client(base.BaseClient):
@@ -67,3 +68,4 @@ class Client(base.BaseClient):
         self.milestones = milestones.MilestonesManager(self)
         self.worklists = worklists.WorklistsManager(self)
         self.boards = boards.BoardsManager(self)
+        self.due_dates = due_dates.Due_datesManager(self)
