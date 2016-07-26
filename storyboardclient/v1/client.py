@@ -22,6 +22,7 @@ from storyboardclient.v1 import projects
 from storyboardclient.v1 import stories
 from storyboardclient.v1 import subscription_events
 from storyboardclient.v1 import subscriptions
+from storyboardclient.v1 import system_info
 from storyboardclient.v1 import tags
 from storyboardclient.v1 import tasks
 from storyboardclient.v1 import teams
@@ -67,3 +68,4 @@ class Client(base.BaseClient):
         self.milestones = milestones.MilestonesManager(self)
         self.worklists = worklists.WorklistsManager(self)
         self.boards = boards.BoardsManager(self)
+        self.system_info = system_info.SystemInfoManager(self)
