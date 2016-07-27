@@ -22,6 +22,7 @@ class Branch(base.BaseObject):
     expired = None
     expiration_date = None
     autocreated = None
+    restricted = None
 
 
 class BranchesManager(base.BaseManager):
