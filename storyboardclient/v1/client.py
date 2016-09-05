@@ -16,6 +16,7 @@
 from storyboardclient import base
 from storyboardclient.v1 import boards
 from storyboardclient.v1 import branches
+from storyboardclient.v1 import due_dates
 from storyboardclient.v1 import milestones
 from storyboardclient.v1 import project_groups
 from storyboardclient.v1 import projects
@@ -69,3 +70,4 @@ class Client(base.BaseClient):
         self.worklists = worklists.WorklistsManager(self)
         self.boards = boards.BoardsManager(self)
         self.system_info = system_info.SystemInfoManager(self)
+        self.due_dates = due_dates.DueDatesManager(self)
