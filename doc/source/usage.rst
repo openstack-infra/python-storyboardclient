@@ -5,11 +5,14 @@ Usage
 To use python-storyboardclient in a project::
 
     from storyboardclient.v1 import client
-    api_url="http://storyboard-dev.openstack.org/api/v1"
+    api_url="https://storyboard-dev.openstack.org/api/v1"
     access_token="$MY_ACCESS_TOKEN"
     storyboard = client.Client(api_url, access_token)
 
-That will not work with storyboard-dev because of certificates, but that demos the syntax.
+That will not work with storyboard-dev at the moment, as storyboard-dev
+uses a self-signed certificate-- but it demos the syntax. It is very
+important to use https, not http, or you will get weird and wonderful
+errors!
 
 Some sample commands to get things::
 
@@ -78,7 +81,7 @@ Longer sample script::
 
     from storyboardclient.v1 import client
 
-    storyboard = client.Client(api_url="http://storyboard-dev.openstack.org/api/v1", access_token="$MY_ACCESS_TOKEN")
+    storyboard = client.Client(api_url="https://storyboard-dev.openstack.org/api/v1", access_token="$MY_ACCESS_TOKEN")
 
     stories = storyboard.stories.get_all()
 
