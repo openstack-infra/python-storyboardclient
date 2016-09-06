@@ -42,7 +42,7 @@ class Client(base.BaseClient):
                                    "mytoken")
     """
 
-    def __init__(self, api_url=None, access_token=None):
+    def __init__(self, api_url=None, access_token=None, verify=True):
         """Sets up a client with endpoint managers.
 
         :param api_url: (Optional) Full API url. Defaults to
@@ -53,8 +53,7 @@ class Client(base.BaseClient):
         :return: a client instance.
         """
         super(Client, self).__init__(api_url=api_url,
-                                     access_token=access_token)
-
+                                     access_token=access_token, verify=verify)
         self.branches = branches.BranchesManager(self)
         self.tasks = tasks.TasksManager(self)
         self.teams = teams.TeamsManager(self)
