@@ -38,7 +38,7 @@ class Client(base.BaseClient):
     @code:
         from storyboard.v1 import client
 
-        storyboard = client.Client("https://storyboard.openstack.org/api/v1",
+        storyboard = client.Client("https://storyboard-dev.openstack.org/api/v1",
                                    "mytoken")
     """
 
@@ -46,7 +46,7 @@ class Client(base.BaseClient):
         """Sets up a client with endpoint managers.
 
         :param api_url: (Optional) Full API url. Defaults to
-        https://storyboard.openstack.org/api/v1
+        https://storyboard-dev.openstack.org/api/v1
         :param access_token: (Optional) OAuth2 access token. If skipped only
         public read-only endpoint will be available. All other requests will
         fail with Unauthorized error.
