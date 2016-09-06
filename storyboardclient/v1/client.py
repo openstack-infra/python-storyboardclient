@@ -42,7 +42,7 @@ class Client(base.BaseClient):
                                    "mytoken")
     """
 
-    def __init__(self, api_url=None, access_token=None):
+    def __init__(self, api_url=None, access_token=None, verify=True):
         """Sets up a client with endpoint managers.
 
         :param api_url: (Optional) Full API url. Defaults to
@@ -50,11 +50,12 @@ class Client(base.BaseClient):
         :param access_token: (Optional) OAuth2 access token. If skipped only
         public read-only endpoint will be available. All other requests will
         fail with Unauthorized error.
+        :param verify: (Optional) Check certificate. Defaults to `True`; set
+         to `False` if accessing a trusted instance with a self-signed cert.
         :return: a client instance.
         """
         super(Client, self).__init__(api_url=api_url,
-                                     access_token=access_token)
-
+                                     access_token=access_token, verify=verify)
         self.branches = branches.BranchesManager(self)
         self.tasks = tasks.TasksManager(self)
         self.teams = teams.TeamsManager(self)
