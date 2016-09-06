@@ -26,12 +26,13 @@ DEFAULT_API_URL = "https://storyboard.openstack.org/api/v1"
 
 class BaseClient(client.BaseClient):
 
-    def __init__(self, api_url=None, access_token=None):
+    def __init__(self, api_url=None, access_token=None, verify=True):
         if not api_url:
             api_url = DEFAULT_API_URL
 
         self.auth_plugin = oauth.OAuthPlugin(api_url, access_token)
-        self.http_client = BaseHTTPClient(auth_plugin=self.auth_plugin)
+        self.http_client = BaseHTTPClient(auth_plugin=self.auth_plugin,
+                                          verify=verify)
 
 
 class BaseHTTPClient(client.HTTPClient):
