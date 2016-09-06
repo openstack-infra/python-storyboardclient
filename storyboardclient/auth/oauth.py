@@ -23,11 +23,12 @@ class OAuthPlugin(auth.BaseAuthPlugin):
         # for authenticating a python client with OAuth.
         pass
 
-    def __init__(self, api_url=None, access_token=None):
+    def __init__(self, api_url=None, access_token=None, verify=True):
         super(OAuthPlugin, self).__init__()
 
         self.api_url = api_url
         self.access_token = access_token
+        self.verify = verify
 
     def token_and_endpoint(self, endpoint_type=None, service_type=None):
-        return self.access_token, self.api_url
+        return self.access_token, self.api_url, self.verify
