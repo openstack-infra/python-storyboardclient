@@ -21,7 +21,7 @@ from storyboardclient.auth import oauth
 from storyboardclient.openstack.common.apiclient import base
 from storyboardclient.openstack.common.apiclient import client
 
-DEFAULT_API_URL = "https://storyboard.openstack.org/api/v1"
+DEFAULT_API_URL = "https://storyboard-dev.openstack.org/api/v1"
 
 
 class BaseClient(client.BaseClient):
