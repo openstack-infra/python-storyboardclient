@@ -7,10 +7,13 @@ To use python-storyboardclient in a project::
     from storyboardclient.v1 import client
     api_url="https://storyboard-dev.openstack.org/api/v1"
     access_token="$MY_ACCESS_TOKEN"
-    storyboard = client.Client(api_url, access_token)
+    verify = False
+    storyboard = client.Client(api_url, access_token, verify)
 
-That will not work with storyboard-dev at the moment, as storyboard-dev
-uses a self-signed certificate-- but it demos the syntax. It is very
+The access token is optional, but needed for creating things,
+updating things, or retrieving private information. The 'verify'
+setting is necessary for accessing instances using self-signed
+certificates (including storyboard-dev). It is very
 important to use https, not http, or you will get weird and wonderful
 errors!
 
@@ -93,10 +96,7 @@ Longer sample script::
         except:
             pass
 
-
 TODO:
 
-Some examples of `delete` commands
 Sections on updating board and worklist items need filling in.
 Timeline events for boards and worklists need adding.
-
