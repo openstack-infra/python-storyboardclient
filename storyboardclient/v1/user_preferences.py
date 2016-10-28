@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from oslo_log import log
 import six
 
 from storyboardclient import base
-from storyboardclient.openstack.common import log
 
 LOG = log.getLogger(__name__)
 
