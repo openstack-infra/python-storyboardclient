@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from storyboardclient.openstack.common.apiclient import auth
+from storyboardclient._apiclient import auth
 
 
 class OAuthPlugin(auth.BaseAuthPlugin):

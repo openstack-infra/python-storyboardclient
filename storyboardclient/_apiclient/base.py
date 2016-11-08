@@ -44,8 +44,8 @@ from oslo_utils import strutils
 import six
 from six.moves.urllib import parse
 
-from storyboardclient.openstack.common._i18n import _
-from storyboardclient.openstack.common.apiclient import exceptions
+from storyboardclient._i18n import _
+from storyboardclient._apiclient import exceptions
 
 
 def getid(obj):

@@ -38,8 +38,8 @@ from oslo_utils import encodeutils
 from oslo_utils import importutils
 import requests
 
-from storyboardclient.openstack.common._i18n import _
-from storyboardclient.openstack.common.apiclient import exceptions
+from storyboardclient._i18n import _
+from storyboardclient._apiclient import exceptions
 
 _logger = logging.getLogger(__name__)
 SENSITIVE_HEADERS = ('X-Auth-Token', 'X-Subject-Token',)
@@ -64,7 +64,7 @@ class HTTPClient(object):
       into terminal and send the same request with curl.
     """
 
-    user_agent = "storyboardclient.openstack.common.apiclient"
+    user_agent = "storyboardclient._apiclient"
 
     def __init__(self,
                  auth_plugin,
@@ -292,7 +292,7 @@ class HTTPClient(object):
 
         >>> def test_clients():
         ...     from keystoneclient.auth import keystone
-        ...     from openstack.common.apiclient import client
+        ...     from openstack.common._apiclient import client
         ...     auth = keystone.KeystoneAuthPlugin(
         ...         username="user", password="pass", tenant_name="tenant",
         ...         auth_url="http://auth:5000/v2.0")

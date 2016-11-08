@@ -1,7 +1,7 @@
 [run]
 branch = True
 source = storyboardclient
-omit = storyboardclient/tests/*,storyboardclient/openstack/*
+omit = storyboardclient/tests/*,storyboardclient/apiclient/*
 
 [report]
 ignore_errors = True

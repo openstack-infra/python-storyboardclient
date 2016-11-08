@@ -37,7 +37,7 @@ import os
 import six
 from stevedore import extension
 
-from storyboardclient.openstack.common.apiclient import exceptions
+from storyboardclient._apiclient import exceptions
 
 
 _discovered_plugins = {}

@@ -38,7 +38,7 @@ import sys
 
 import six
 
-from storyboardclient.openstack.common._i18n import _
+from storyboardclient._i18n import _
 
 
 class ClientException(Exception):
