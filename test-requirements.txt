@@ -9,7 +9,7 @@ python-subunit
 sphinx>=1.1.2
 oslosphinx
 oslotest>=1.1.0.0a1
-tempest-lib
+os-testr>=0.4.1
 testrepository>=0.0.18
 testscenarios>=0.4
 testtools>=0.9.34
