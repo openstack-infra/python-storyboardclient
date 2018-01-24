@@ -85,7 +85,7 @@ class BaseManager(base.CrudManager):
 
         elif method == 'get':
             first = True
-            for key, value in kwargs.iteritems():
+            for key, value in six.iteritems(kwargs):
                 if first:
                     url += '?'
                     first = False
