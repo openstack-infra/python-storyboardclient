@@ -1,0 +1,9 @@
+Code-Review+2: Joshua Hesketh <josh@nitrotech.org>
+Code-Review+2: Adam Coldrick <adam.coldrick@codethink.co.uk>
+Workflow+1: Adam Coldrick <adam.coldrick@codethink.co.uk>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 25 Jul 2018 19:15:12 +0000
+Reviewed-on: https://review.openstack.org/571477
+Project: openstack-infra/python-storyboardclient
+Branch: refs/heads/master
