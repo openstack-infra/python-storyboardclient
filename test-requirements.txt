@@ -11,3 +11,4 @@ stestr>=2.0.0
 testrepository>=0.0.18
 testscenarios>=0.4
 testtools>=0.9.34
+appdirs>=1.4.3
