@@ -4,7 +4,7 @@ Installation
 
 Clone the repo::
 
-    $ git clone git://git.openstack.org/openstack-infra/python-storyboardclient
+    $ git clone https://git.openstack.org/openstack-infra/python-storyboardclient
 
 Inside the repo, on the command line::
 
